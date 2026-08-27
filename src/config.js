@@ -4,6 +4,12 @@ export const EDIT_MODE = false
 export const IGN_WMS_URL = 'https://data.geopf.fr/wms-r/wms'
 export const IGN_LAYER_T1 = 'ORTHOIMAGERY.ORTHOPHOTOS2020'                 // BD ORTHO 2020 (RGB)
 export const IGN_LAYER_T2 = 'ORTHOIMAGERY.ORTHOPHOTOS.ORTHO-EXPRESS.2023'  // Ortho-express 2023 (RGB)
+// Millésime 2026 : prise de vue IGN de mai-juin 2026, servie en Ortho-express
+// depuis l'été 2026 et couvrant l'ensemble du département. Attention au
+// changement de nommage IGN : ORTHO-EXPRESS.<année> jusqu'en 2025,
+// RVB-EXPRESS.<année> à partir de 2026 (ORTHO-EXPRESS.2026 renvoie une erreur).
+// La BD ORTHO définitive du millésime 2026 n'est pas encore parue.
+export const IGN_LAYER_T3 = 'ORTHOIMAGERY.ORTHOPHOTOS.RVB-EXPRESS.2026'    // Ortho-express 2026 (RGB)
 export const MAP_CENTER = [48.18, -1.63]   // Ille-et-Vilaine (hors Rennes Métropole)
 export const MAP_ZOOM = 9
 

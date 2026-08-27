@@ -16,7 +16,7 @@ import '@geoman-io/leaflet-geoman-free'
 import buffer from '@turf/buffer'
 import { lineString } from '@turf/helpers'
 import FeatureDetail from './FeatureDetail.jsx'
-import { IGN_WMS_URL, IGN_LAYER_T1, IGN_LAYER_T2, MAP_CENTER, MAP_ZOOM } from '../config.js'
+import { IGN_WMS_URL, IGN_LAYER_T1, IGN_LAYER_T2, IGN_LAYER_T3, MAP_CENTER, MAP_ZOOM } from '../config.js'
 
 // Fix default icon paths broken by Vite bundling
 delete L.Icon.Default.prototype._getIconUrl
@@ -156,6 +156,7 @@ export default function MapView({
     { id: 'osm',        label: 'Plan OSM',   icon: '🗺' },
     { id: 'ortho2020',  label: 'Image 2020', icon: '✈' },
     { id: 'ortho2023',  label: 'Image 2023', icon: '✈' },
+    { id: 'ortho2026',  label: 'Image 2026', icon: '✈' },
   ]
 
   return (
@@ -200,6 +201,11 @@ export default function MapView({
           <WMSTileLayer key="wms2023" url={IGN_WMS_URL} layers={IGN_LAYER_T2}
             version="1.3.0" crs={L.CRS.EPSG4326} format="image/png"
             transparent={false} maxZoom={20} attribution="IGN Ortho-express 2023" />
+        )}
+        {basemap === 'ortho2026' && (
+          <WMSTileLayer key="wms2026" url={IGN_WMS_URL} layers={IGN_LAYER_T3}
+            version="1.3.0" crs={L.CRS.EPSG4326} format="image/png"
+            transparent={false} maxZoom={20} attribution="IGN Ortho-express 2026" />
         )}
 
         {emprise && (

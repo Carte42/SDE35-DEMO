@@ -274,6 +274,9 @@ body {
   transform: translateX(-50%);
   z-index: 500;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 32px);
   gap: 10px;
   background: rgba(10, 18, 42, 0.82);
   border: 1px solid #2a4a7a;
